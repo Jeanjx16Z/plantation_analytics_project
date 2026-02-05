@@ -2,3 +2,4 @@ sql/plantation.sql
 sql/plantation.db
 .vscode/settings.json
 notebooks/plantation.db
+plantation_data.db
