@@ -7,7 +7,7 @@ st.set_page_config(page_title="Plantation Analytics Dashboard", layout="wide")
 
 st.title("🌱 Plantation Analytics Dashboard")
 # LOAD DATA
-engine = create_engine('sqlite:///../plantation.db')
+engine = create_engine('sqlite:///plantation.db')
 
 df = pd.read_sql("SELECT * FROM plantation", engine)
 
@@ -78,7 +78,7 @@ st.header("Total Profit by Region")
 region_profit = df.groupby("region")["profit"].sum().reset_index()
 
 fig1 = px.bar(region_profit, x="region", y="profit", title="Total Profit by Region")
-st.plotly_chart(fig1, use_container_width=True)
+st.plotly_chart(fig1, width='stretch')
 
 # CHART2--Monthly Trend
 st.header("Monthly Profit Trend")
@@ -86,13 +86,13 @@ st.header("Monthly Profit Trend")
 monthly_profit = df.groupby("month")["profit"].sum().reset_index()
 
 fig2 = px.line(monthly_profit, x="month", y="profit", title="Monthly Profit Trend")
-st.plotly_chart(fig2, use_container_width=True)
+st.plotly_chart(fig2, width='stretch')
 
 # CHART3--DISTRIBUTIOM
 st.header("Profit Distribution")
 
 fig3 = px.histogram(df, x="profit", nbins=30, title="Profit Distribution")
-st.plotly_chart(fig3, use_container_width=True)
+st.plotly_chart(fig3, width='stretch')
 
 # CHART4 -- Correlation Heatmap
 st.header("Correlation Heatmap")
@@ -100,7 +100,7 @@ st.header("Correlation Heatmap")
 corr = df.corr(numeric_only=True)
 
 fig4 = px.imshow(corr, text_auto=True, title="Correlation Heatmap")
-st.plotly_chart(fig4, use_container_width=True)
+st.plotly_chart(fig4, width='stretch')
 
 # CHART5--REGION TREND
 st.header("Profit Trend by Region")
@@ -109,5 +109,5 @@ region_month = df.groupby(["month","region"])["profit"].sum().reset_index()
 
 fig5 = px.line(region_month, x="month", y="profit", color="region",
                title="Profit Trend by Region")
-st.plotly_chart(fig5, use_container_width=True)
+st.plotly_chart(fig5, width='stretch')
 
