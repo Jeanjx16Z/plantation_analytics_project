@@ -32,19 +32,19 @@ This project mimics how a data analyst supports executive decision-making.
 
 ## 📂 Project Structure
 
+```
 plantation_analytics_project/
 │
-├── data/ # Raw and processed datasets
-├── notebooks/ # EDA and analysis notebooks
-├── src/ # ETL and analytics scripts
+├── data/                # Raw and processed datasets
+├── notebooks/           # EDA and analysis notebooks
+├── src/                 # ETL and analytics scripts
 ├── dashboard/
-│ ├── app.py # Streamlit dashboard
-│ └── plantation.db # SQLite database
+│   ├── app.py           # Streamlit dashboard
+│   └── plantation.db    # SQLite database
 │
 ├── requirements.txt
 └── README.md
-
-
+```
 ## 🔄 Pipeline Overview
 
 1. **Data Generation**
@@ -94,4 +94,33 @@ The dashboard is designed for management-level decision support.
 pip install -r requirements.txt
 cd dashboard
 streamlit run app.py
+```
+## 🎯 Business Impact
 
+This project demonstrates:
+
+- Data storytelling  
+- KPI-driven analytics  
+- Executive dashboard design  
+- ETL pipeline understanding  
+- SQL analytical thinking  
+- End-to-end analytics workflow  
+
+It simulates a real analytics role inside a company.
+
+---
+
+## 👨‍💻 Author
+
+**Jean Jeasen**  
+AI & Computer Vision Engineer transitioning into advanced analytics
+
+---
+
+## 📌 Future Improvements
+
+- Predictive modeling  
+- Forecasting profit trends  
+- Advanced KPI benchmarking  
+- Cloud data warehouse integration  
+- Automated reporting
